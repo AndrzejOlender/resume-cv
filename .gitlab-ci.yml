@@ -1,0 +1,8 @@
+image: blang/latex
+
+build:
+  script:
+    - latexmk -pdf
+  artifacts:
+    paths:
+      - "xyz.pdf"
