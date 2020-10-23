@@ -4,4 +4,4 @@ compile_pdf:
     - latexmk -r .latexmkrc -pdf 'main.tex' -jobname=resume
   artifacts:
     paths:
-      - ./resume.pdf
+      - CV_AndrzejOlender.pdf
