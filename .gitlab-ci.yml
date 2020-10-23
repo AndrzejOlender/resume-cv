@@ -9,7 +9,9 @@
 compile_pdf:
   stage: build
   image: timnn/texlive  # use a Docker image for LaTeX from https://hub.docker.com/
-  script: pdflatex -interaction=nonstopmode main.tex # build the pdf just as you would on your computer
+  script: 
+    - pdflatex -interaction=nonstopmode main.tex # build the pdf just as you would on your computer
+    - echo "error code -> $?"
   artifacts:
     paths: 
       - main.pdf  # instruct GitLab to keep the main.pdf file
