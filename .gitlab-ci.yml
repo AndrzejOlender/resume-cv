@@ -1,27 +1,21 @@
 compile_pdf:
-  image: aergus/latex
-  script:
-    - latexmk -f -r .latexmkrc -pdf 'main.tex' -jobname=resume
+  stage: build
+#  image: timnn/texlive
+  image: miktex/miktex-build-ubuntu:focal
+  script: 
+#    - pdflatex -interaction=batchmode main.tex
+    - pdflatex -interaction=nonstopmode -halt-on-error main.tex 
   artifacts:
-    paths:
-      - main.pdf
-
-#compile_pdf:
-#  stage: build
-#  image: timnn/texlive  # use a Docker image for LaTeX from https://hub.docker.com/
-#  script: 
-#    - pdflatex -interaction=batchmode main.tex 2> /dev/null # build the pdf just as you would on your computer
-#  artifacts:
-#    paths: 
-#      - main.pdf  # instruct GitLab to keep the main.pdf file
+    paths: 
+      - main.pdf  
 
 pages:
   stage: deploy
   script:
-    - mkdir public  # create a folder called public
-    - cp main.pdf public  # copy the pdf file into the public folder
+    - mkdir public 
+    - cp main.pdf public 
   artifacts:
     paths: 
-      - public  # instruct GitLab to keep the public folder
+      - public 
   only: 
-    - master  # deploy the pdf only for commits made to the master branch 
+    - master  
