@@ -1,7 +1,7 @@
 compile_pdf:
   image: aergus/latex
   script:
-    - latexmk -r .latexmkrc -pdf 'main.tex' -jobname=resume
+    - latexmk -f -r .latexmkrc -pdf 'main.tex' -jobname=resume
   artifacts:
     paths:
       - main.pdf
