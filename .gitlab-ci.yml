@@ -1,8 +1,7 @@
-image: blang/latex
-
-build:
+compile_pdf:
+  image: aergus/latex
   script:
-    - latexmk -pdf
+    - latexmk -r .latexmkrc -pdf 'main.tex' -jobname=resume
   artifacts:
     paths:
-      - "xyz.pdf"
+      - ./resume.pdf
