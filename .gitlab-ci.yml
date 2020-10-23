@@ -1,19 +1,19 @@
-#compile_pdf:
-#  image: aergus/latex
-#  script:
-#    - latexmk -r .latexmkrc -pdf 'main.tex' -jobname=resume
-#  artifacts:
-#    paths:
-#      - main.pdf
-
 compile_pdf:
-  stage: build
-  image: timnn/texlive  # use a Docker image for LaTeX from https://hub.docker.com/
-  script: 
-    - pdflatex -interaction=batchmode main.tex 2> /dev/null # build the pdf just as you would on your computer
+  image: aergus/latex
+  script:
+    - latexmk -r .latexmkrc -pdf 'main.tex' -jobname=resume
   artifacts:
-    paths: 
-      - main.pdf  # instruct GitLab to keep the main.pdf file
+    paths:
+      - main.pdf
+
+#compile_pdf:
+#  stage: build
+#  image: timnn/texlive  # use a Docker image for LaTeX from https://hub.docker.com/
+#  script: 
+#    - pdflatex -interaction=batchmode main.tex 2> /dev/null # build the pdf just as you would on your computer
+#  artifacts:
+#    paths: 
+#      - main.pdf  # instruct GitLab to keep the main.pdf file
 
 pages:
   stage: deploy
