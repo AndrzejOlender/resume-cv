@@ -2,7 +2,7 @@ compile_pdf:
   stage: build
   image: andrzejolender/pdflatex:1.0.0
   script: 
-    - pdflatex -interaction=batchmode main.tex
+    - pdflatex -interaction=batchmode main.tex 2>/dev/null || exit 0
   artifacts:
     paths: 
       - main.pdf  
