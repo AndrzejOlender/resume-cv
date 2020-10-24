@@ -6,6 +6,8 @@ compile_pdf:
   artifacts:
     paths: 
       - main.pdf  
+  only: 
+    - master  
 
 pages:
   stage: deploy
