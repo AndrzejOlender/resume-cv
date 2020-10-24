@@ -1,5 +1,5 @@
 FROM debian:stretch
-LABEL maintainer="Julian Didier (theredfish)" \
+LABEL maintainer="Andrzej Olender" \
       description="A docker image based on Debian that provides pdflatex and common packages" \
       repo="https://github.com/theredfish/docker-pdflatex"
 
