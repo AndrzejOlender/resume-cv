@@ -1,6 +1,6 @@
 compile_pdf:
   stage: build
-  image: andrzejolender/pdflatex:1.0.0
+  image: registry.olender.io/andrzej/resume-cv:1.0.0
   script: 
     - pdflatex -interaction=batchmode main.tex 2>/dev/null || exit 0
   artifacts:
