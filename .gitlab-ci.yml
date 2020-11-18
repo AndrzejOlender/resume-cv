@@ -5,7 +5,7 @@ compile_pdf:
     - pdflatex -interaction=batchmode main.tex 2>/dev/null || exit 0
   artifacts:
     paths: 
-      - main.pdf  
+      - ./*.pdf 
   only: 
     - master  
 
@@ -15,6 +15,6 @@ pages:
     - cp main.pdf public 
   artifacts:
     paths: 
-      - public 
+      - ./*.pdf 
   only: 
     - master  
