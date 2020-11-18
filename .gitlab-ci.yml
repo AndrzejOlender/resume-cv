@@ -3,8 +3,9 @@ compile_pdf:
   image: registry.olender.io/andrzej/resume-cv:1.0.0
   script: 
     - pdflatex -interaction=batchmode main.tex 2>/dev/null || exit 0
+    - mv main.pdf CV-AndrzejOlender.pdf
   artifacts:
     paths: 
-      - main.pdf 
+      - CV-AndrzejOlender.pdf.pdf 
   only: 
     - master  
