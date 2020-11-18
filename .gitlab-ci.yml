@@ -6,6 +6,6 @@ compile_pdf:
     - mv main.pdf CV-AndrzejOlender.pdf
   artifacts:
     paths: 
-      - CV-AndrzejOlender.pdf.pdf 
+      - CV-AndrzejOlender.pdf 
   only: 
     - master  
