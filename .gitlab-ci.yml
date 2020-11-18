@@ -4,8 +4,8 @@ compile_pdf:
   script: 
     - pdflatex -interaction=batchmode main.tex 2>/dev/null || exit 0
     - rename main.pdf CVAndrzejOlender.pdf
-  artifacts:
-    paths: 
-      - ./*.pdf 
+  # artifacts:
+  #   paths: 
+  #     - ./*.pdf 
   only: 
     - master  
