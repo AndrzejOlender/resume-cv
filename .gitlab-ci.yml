@@ -1,4 +1,3 @@
-#
 compile_pdf:
   stage: build
   image: registry.olender.io/andrzej/resume-cv:1.0.0
