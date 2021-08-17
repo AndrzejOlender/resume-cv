@@ -4,7 +4,7 @@ on:
   push:
     branches: 
       - master
-      - develop
+      - dev
     tags:
        - '*'
   pull_request:
@@ -22,9 +22,3 @@ jobs:
           output_dir: output
           main_latex_file: main.tex
           ctan_packages: amssymb latexsym amsmath
-      - name: Upload PDF to the workflow tab
-        id: upload-workflow-tab
-        uses: actions/upload-artifact@v2
-        with:
-          name: output
-          path: output/test.pdf
