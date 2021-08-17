@@ -16,7 +16,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Compile Latex to PDF
-        run: pdflatex -interaction=batchmode main.tex 2>/dev/null || exit 0
+        #run: pdflatex -interaction=batchmode main.tex 2>/dev/null || exit 0
+        run: pdflatex -interaction=batchmode main.tex
       - name: Upload PDF to the workflow tab
         id: upload-workflow-tab
         uses: actions/upload-artifact@v2
