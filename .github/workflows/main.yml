@@ -22,5 +22,5 @@ jobs:
       - name: Upload PDF to the workflow tab
         uses: actions/upload-artifact@v2
         with:
-          name: output
+          name: CVAndrzejOlender
           path: main.pdf
