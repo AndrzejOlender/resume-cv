@@ -5,9 +5,8 @@ jobs:
     runs-on: ubuntu-latest
     name: LaTeX-to-PDF github action
     steps:
-    - uses: forkbabu/AutoEdit@v2.0
     - name: Compilation
-      uses: vinay0410/tectonic-action@master
+      uses: forkbabu/AutoEdit@v2.0
       with:
         tex_path: 'main.tex'
         push: 'yes'
