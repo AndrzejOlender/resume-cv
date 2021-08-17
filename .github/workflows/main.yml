@@ -3,11 +3,12 @@ on: [push]
 jobs:
   latex-job:
     runs-on: ubuntu-latest
-    name: A job to Compile Latex file
+    name: LaTeX-to-PDF github action
     steps:
-    - uses: actions/checkout@v1
+    - uses: forkbabu/AutoEdit@v2.0
     - name: Compilation
       uses: vinay0410/tectonic-action@master
       with:
         tex_path: 'main.tex'
         push: 'yes'
+
