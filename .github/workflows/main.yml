@@ -2,7 +2,7 @@ on: [push]
 
 jobs:
   latex-job:
-    runs-on: andrzejolender/resume-cv
+    runs-on: ubuntu-latest
     name: A job to Compile Latex file
     steps:
     - uses: actions/checkout@v1
