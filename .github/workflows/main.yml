@@ -15,4 +15,11 @@ jobs:
     container: andrzejolender/resume-cv:1.0.0
     runs-on: ubuntu-latest
     steps:
-      - run: pdflatex -interaction=batchmode main.tex 2>/dev/null || exit 0
+      - name: Compile Latex to PDF
+        run: pdflatex -interaction=batchmode main.tex 2>/dev/null || exit 0
+      - name: Upload PDF to the workflow tab
+        id: upload-workflow-tab
+        uses: actions/upload-artifact@v2
+        with:
+          name: output
+          path: output/AndrzejOlender.pdf
