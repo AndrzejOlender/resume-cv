@@ -16,9 +16,3 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - run: pdflatex -interaction=batchmode main.tex 2>/dev/null || exit 0
-      - name: latex2pdf
-        id: compile-latex-document
-        with:
-          output_dir: output
-          main_latex_file: main.tex
-          ctan_packages: amssymb latexsym amsmath
