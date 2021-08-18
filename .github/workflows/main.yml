@@ -1,0 +1,28 @@
+name: LateX to PDF
+
+on:
+  push:
+    branches: 
+      - master
+      - dev
+    tags:
+       - '*'
+  pull_request:
+    branches: [ master ]
+
+jobs:
+  build:
+    container: andrzejolender/resume-cv:1.0.0
+    runs-on: ubuntu-latest
+    steps:
+      - name: Set up Git repository
+        uses: actions/checkout@v2
+      - name: Compile Latex to PDF
+        run: pdflatex -interaction=batchmode main.tex 2>/dev/null || exit 0
+      - name: Rename PDF
+        run: mv main.pdf CV_AndrzejOlender.pdf
+      - name: Upload PDF to the workflow
+        uses: actions/upload-artifact@v2
+        with:
+          name: CVAndrzejOlender
+          path: CV_AndrzejOlender.pdf
