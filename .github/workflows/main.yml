@@ -26,3 +26,8 @@ jobs:
         with:
           name: CVAndrzejOlender
           path: CV_AndrzejOlender.pdf
+          
+      - uses: actions/download-artifact@v2
+        with:
+          name: CVAndrzejOlender
+          path: ~/Downloads/
