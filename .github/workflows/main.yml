@@ -13,7 +13,7 @@ on:
 jobs:
   build:
     container: andrzejolender/resume-cv:1.0.0
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
     steps:
       - name: Set up Git repository
         uses: actions/checkout@v2
