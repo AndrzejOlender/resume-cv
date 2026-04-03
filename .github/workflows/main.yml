@@ -2,7 +2,7 @@ name: LateX to PDF
 
 on:
   push:
-    branches: 
+    branches:
       - master
       - dev
     tags:
@@ -12,13 +12,14 @@ on:
 
 jobs:
   build:
-    container: andrzejolender/resume-cv:1.0.0
     runs-on: ubuntu-latest
     steps:
       - name: Set up Git repository
         uses: actions/checkout@v4
+      - name: Build Docker image
+        run: docker build -t resume-cv .
       - name: Compile Latex to PDF
-        run: pdflatex -interaction=batchmode main.tex 2>/dev/null || exit 0
+        run: docker run --rm -v ${{ github.workspace }}:/root resume-cv pdflatex -interaction=nonstopmode main.tex
       - name: Rename PDF
         run: mv main.pdf CV_AndrzejOlender.pdf
       - name: Upload PDF to the workflow
