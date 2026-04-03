@@ -73,7 +73,7 @@
 \usepackage[a4paper]{geometry}
 
 % remove all possible margins
-\geometry{top=1cm, bottom=1cm, left=1cm, right=1cm}
+\geometry{top=0.7cm, bottom=0.7cm, left=1cm, right=1cm}
 
 \usepackage{fancyhdr}
 \pagestyle{empty}
@@ -155,7 +155,7 @@
 % Renders a a CV section headline with a nice underline in main color.
 % param 1: section title
 \newcommand{\cvsection}[1] {
-	\vspace{14pt}
+	\vspace{10pt}
 	\cvtext{
 		\textbf{\LARGE{\textcolor{darkcol}{\uppercase{#1}}}}\\[-4pt]
 		\textcolor{maincol}{ \rule{0.1\textwidth}{2pt} } \\
@@ -207,22 +207,22 @@
 	}
 
 	\ifthenelse{\isempty{#5}}{}{
-		\vspace{9pt}
+		\vspace{4pt}
 		{#5}
 	}
 
 	\ifthenelse{\isempty{#6}}{}{
-		\vspace{9pt}
+		\vspace{4pt}
 		\cvtext{\textbf{Technologies:}}\\
 		{#6}
 	}
 
 	\ifthenelse{\isempty{#7}}{}{
-		\vspace{9pt}
+		\vspace{4pt}
 		\cvtext{\textbf{}}\\
 		{#7}
 	}
-	\vspace{14pt}
+	\vspace{6pt}
 }
 
 % --- CV META EVENT ---
@@ -269,17 +269,17 @@
 % --- META SKILLS ---
 \cvsection{SKILLS}
 
-\cvskill{Linux} {20 years} {0.9} \\[-2pt]
+\cvskill{Linux} {28 years} {0.9} \\[-2pt]
 
-\cvskill{Kubernetes} {5 years} {0.8} \\[-2pt]
+\cvskill{Kubernetes} {6 years} {0.8} \\[-2pt]
 
 \cvskill{LGTM Stack} {5 years} {0.7} \\[-2pt]
 
-\cvskill{Ansible} {4 year} {0.7} \\[-2pt]
+\cvskill{Ansible} {5 years} {0.7} \\[-2pt]
 
-\cvskill{CI/CD GitLab/GitHub} {4 years} {0.7} \\[-2pt]
+\cvskill{CI/CD GitLab/GitHub} {6 years} {0.7} \\[-2pt]
 
-\cvskill{Terraform} {3 years} {0.7} \\[-2pt]
+\cvskill{Terraform} {5 years} {0.7} \\[-2pt]
 
 \cvsection{CERTIFICATES}
 \cvmetaevent
@@ -292,39 +292,10 @@
 \icontext{Phone}{12}{+48 731 017 202}{black}\\[6pt]
 \iconemail{Envelope}{12}{andrzej@olender.io}{andrzej@olender.io}{black}\\[6pt]
 \iconhref{Globe}{12}{olender.io}{https://olender.io}{black}\\[6pt]
+\iconhref{Linkedin}{12}{andrzej-olender}{https://www.linkedin.com/in/andrzej-olender}{black}\\[6pt]
+\iconhref{Github}{12}{AndrzejOlender}{https://github.com/AndrzejOlender}{black}\\[6pt]
 
 \vfill\null
-% \cvqrcode{0.7}
-
-
-% --- EDUCATION ---
-\newpage
-\cvsection{EDUCATION}
-
-\cvmetaevent
-{2003 - 2005}
-{Technical School}
-{Post-Secondary Vocational School}
-{IT Technician. Thesis defense: Security of Servers Based on the Linux System}
-
-\cvmetaevent
-{1997 - 2002}
-{Technical School}
-{School Complex No. 2, Tychy}
-{Automation Technician. Specialization: Control and Measurement Apparatus and Mechanical Industrial Automation}
-
-% --- HOBBY ---
-\cvsection{HOBBY}
-
-\cvmetaevent
-{}
-{}
-{}
-{Home automation (Home Assistant, ESP, Zigbee, etc.). Long-distance running, photography (formerly professional), manual craftsmanship (patination of classic footwear, 2nd place at the World Championships - London 2019) }
-\vfill
-
-\mbox{} % hotfix to place qrcode on the bottom when there are not other elements
-\vfill
 \end{leftcolumn}
 \begin{rightcolumn}
 
@@ -343,18 +314,32 @@
 
 \cvtext{I have been active in the Linux community since 1998, and I am a strong advocate of Open Source and technology in general.\\
 
-I specialize in automations, from those that bring benefits in private life (Smart Home) to producing and delivering software in business. I am a fervent fan of "Everything as Code".\\
+I specialize in platform engineering, AI agents, and automations -- from those that bring benefits in private life (Smart Home) to producing and delivering software in business. I am a fervent fan of "Everything as Code".\\
 
-Nearly 20 years of professional experience allows me to now look at many potential problems from an unconventional perspective.\\
-
-I am able to work under stress, communicate well with teams of people, and am a team player.\\
+Over 23 years of professional experience allows me to now look at many potential problems from an unconventional perspective.\\
 }
 
 
 % --- WORK EXPERIENCE ---
 \cvsection{WORK EXPERIENCE}
 \cvevent
-    {Nov 21 - Present}
+    {May 25 - Present}
+    {Platform Engineer}
+    {eSky.pl S.A}
+    {Building and developing the internal platform based on GCP, ArgoCD and GitHub. Designing and implementing AI agents. Speaker at Google Cloud Summit Poland 2025 -- presented building AI agents on GKE and RAGs for business domains.}
+    {\cvlist{
+        \item Platform development and standardization
+        \item Building AI agents for internal use
+        \item Developer experience and self-service tooling
+    }}
+    {\cvlist {
+        \item Google Cloud, ArgoCD, GitHub Actions
+        \item Kubernetes, Terraform
+        \item Python, LangChain, LangGraph, Qdrant
+    }}
+    {}
+\cvevent
+    {Nov 21 - May 25}
     {Site Reliability Engineer (SRE)}
     {eSky.pl S.A}
     {Development and maintenance of hybrid Google Cloud/On-prem infrastructure}
@@ -362,18 +347,53 @@ I am able to work under stress, communicate well with teams of people, and am a 
         \item Automation of processes, planning of SLI/SLO/SLA services.
         \item Solving current problems, migration of onprem services to the GCP
         \item Infrastructure development
-        \item Working in the SCRUM methodology
     }}
     {\cvlist {
-        \item Google Cloud, Terraform, Ansible
-        \item Kubernetes, Consul
+        \item Google Cloud, Terraform, Ansible, Kubernetes, Consul
         \item PostgreSQL, MongoDB, Redis, Kafka
-        \item ArgoCD, Spinnaker, Jenkins
-        \item Confluence, Bitbucket
-        \item Prometheus, Grafana, ELK Stack
-        \vfill
+        \item ArgoCD, Spinnaker, Prometheus, Grafana, ELK
     }}
-\vfill\null
+    {}
+\vfill
+\end{rightcolumn}
+\end{paracol}
+
+\newpage
+\columnratio{0.31}
+\setlength{\columnsep}{2.2em}
+\setlength{\columnseprule}{4pt}
+\colseprulecolor{lightcol}
+\begin{paracol}{2}
+\begin{leftcolumn}
+
+% --- EDUCATION ---
+\cvsection{EDUCATION}
+
+\cvmetaevent
+{2003 - 2005}
+{Technical School}
+{Post-Secondary Vocational School}
+{IT Technician}
+
+\cvmetaevent
+{1997 - 2002}
+{Technical School}
+{School Complex No. 2, Tychy}
+{Automation Technician}
+
+% --- HOBBY ---
+\cvsection{HOBBY}
+
+\cvtext{Home automation (Home Assistant, ESP, Zigbee)}\\[2pt]
+\cvtext{HomeLab development}\\[2pt]
+\cvtext{Long-distance running}\\[2pt]
+\cvtext{Photography (formerly professional)}\\[2pt]
+\cvtext{Patination of classic footwear (2nd place at World Championships -- London 2019)}
+
+\vfill
+\end{leftcolumn}
+\begin{rightcolumn}
+
 \cvevent
     {Feb 21 - Nov 21}
     {DevOps Engineer}
@@ -396,6 +416,7 @@ I am able to work under stress, communicate well with teams of people, and am a 
         \item Zabbix, Prometheus, Grafana
         \vfill
     }}
+    {}
 \vfill\null
 \cvevent
     {Aug 17 - Jan 21}
@@ -407,46 +428,26 @@ I am able to work under stress, communicate well with teams of people, and am a 
         \item Conducting training for business partners
         \item Preparing pre-implementation analyses
         \item Developing deployment documentation
-        \item Providing assistance to end customers
-        \item Working in the SCRUM methodology
     }}
     {\cvlist {
-        \item MySQL, MSSQL, PostgreSQL
-        \item GitLab
-        \item Docker
-        \item Linux Embedded
+        \item MySQL, MSSQL, PostgreSQL, GitLab, Docker, Linux Embedded
     }}
+    {}
 \vfill\null
 \cvevent
     {Oct 02 - Aug 17}
     {Senior Technical Specialist}
     {Yakudo Plus}
-    {Service of electronic labeling devices. Implementing devices along with software for marking goods in industrial production (EAN13, EAN128, QR Code)}
-    {\cvlist{
-        \item Support service for labeling devices along with software
-        \item Customer assistance - Help Desk
-        \item Creating service documentation
-        \item Conducting training for service partners
-    }}
+    {Service of electronic labeling devices. Implementing devices along with software for marking goods in industrial production (EAN13, EAN128, QR Code). Support service, Help Desk, creating documentation, conducting training for service partners.}
+    {}
     {\cvlist {
-        \item .NET
-        \item MySQL
-        \item Linux Embedded 
+        \item .NET, MySQL, Linux Embedded
     }}
-	
+    {}
 
-	
-% hotfixes to create fake-space to ensure the whole height is used
-\mbox{}
-\vfill
-\mbox{}
-\vfill
-\mbox{}
-\vfill
-\mbox{}
+
 \end{rightcolumn}
 \end{paracol}
-\vfill\null
-\footref{
-% Wyrażam zgodę na przetwarzanie moich danych osobowych dla potrzeb niezbędnych do realizacji procesu rekrutacji (zgodnie z ustawą z dnia 10 maja 2018 roku o ochronie danych osobowych (Dz. Ustaw z 2018, poz. 1000) oraz zgodnie z Rozporządzeniem Parlamentu Europejskiego i Rady (UE) 2016/679 z dnia 27 kwietnia 2016 r. w sprawie ochrony osób fizycznych w związku z przetwarzaniem danych osobowych i w sprawie swobodnego przepływu takich danych oraz uchylenia dyrektywy 95/46/WE (RODO)}
+\vfill
+{\tiny\textcolor{darkcol}{Wyrażam zgodę na przetwarzanie moich danych osobowych dla potrzeb niezbędnych do realizacji procesu rekrutacji (zgodnie z ustawą z dnia 10 maja 2018 roku o ochronie danych osobowych (Dz. Ustaw z 2018, poz. 1000) oraz zgodnie z Rozporządzeniem Parlamentu Europejskiego i Rady (UE) 2016/679 z dnia 27 kwietnia 2016 r. w sprawie ochrony osób fizycznych w związku z przetwarzaniem danych osobowych i w sprawie swobodnego przepływu takich danych oraz uchylenia dyrektywy 95/46/WE (RODO)).}}
 \end{document}

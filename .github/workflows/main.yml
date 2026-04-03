@@ -16,13 +16,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Set up Git repository
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
       - name: Compile Latex to PDF
         run: pdflatex -interaction=batchmode main.tex 2>/dev/null || exit 0
       - name: Rename PDF
         run: mv main.pdf CV_AndrzejOlender.pdf
       - name: Upload PDF to the workflow
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v4
         with:
           name: CVAndrzejOlender
           path: CV_AndrzejOlender.pdf
